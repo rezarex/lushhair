@@ -59,9 +59,25 @@ export default function AdminLayout({ children }) {
             <Star size={20} />
             <span className="font-semibold">Manage Reviews</span>
           </Link>
+          <Link href="/admin/bookings" className="flex items-center space-x-3 p-3 rounded-xl text-gray-600 hover:bg-pink-50 hover:text-pink-600 transition-all">
+            <Star size={20} />
+            <span className="font-semibold">Manage Bookings</span>
+          </Link>
+          <Link href="/admin/chat" className="flex items-center space-x-3 p-3 rounded-xl text-gray-600 hover:bg-pink-50 hover:text-pink-600 transition-all">
+            <Star size={20} />
+            <span className="font-semibold">Live Chat</span>
+          </Link>
         </nav>
 
-        <div className="p-4 border-t border-gray-100 dark:border-gray-700">
+
+      </aside>
+
+      {/* Content Area */}
+      <div className="flex-1 flex flex-col">
+        <header className="h-16 bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700 flex items-center px-8 justify-between">
+          <h2 className="font-bold text-gray-800 dark:text-white">Admin Dashboard</h2>
+          <div className="text-xs font-bold text-gray-400 uppercase tracking-widest">Lush Hair 2.0</div>
+                  <div className="p-4 border-t border-gray-100 dark:border-gray-700">
           <button 
             onClick={handleLogout}
             className="flex items-center space-x-3 p-3 w-full text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-xl transition-all font-bold"
@@ -70,13 +86,6 @@ export default function AdminLayout({ children }) {
             <span>Logout</span>
           </button>
         </div>
-      </aside>
-
-      {/* Content Area */}
-      <div className="flex-1 flex flex-col">
-        <header className="h-16 bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700 flex items-center px-8 justify-between">
-          <h2 className="font-bold text-gray-800 dark:text-white">Admin Dashboard</h2>
-          <div className="text-xs font-bold text-gray-400 uppercase tracking-widest">Lush Hair 2.0</div>
         </header>
         <main className="p-8">
           {children}

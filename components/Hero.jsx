@@ -10,56 +10,50 @@ const Hero = () => {
 
 
   return (
-  <div className="min-h-screen bg-white text-gray-800 font-sans flex items-center pt-16 pb-24">
+    // Added 'relative' and increased 'pb-40' to make room for the absolute button
+    <div className="relative min-h-screen bg-white text-gray-800 font-sans flex items-center pt-16 pb-40">
       
-     
-      <main className="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between">
+      <main className="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between relative">
         
- 
+        {/* Left Content */}
         <div className="lg:w-1/2 flex flex-col space-y-6 text-center lg:text-left mb-12 lg:mb-0">
           <h1 className="text-6xl font-light tracking-tight leading-none">
-            EFFFORLESS <br />
+            EFFORTLESS <br />
             BEAUTY, <br />
             EVERYDAY
           </h1>
           <p className="text-lg text-gray-600 font-light">
-            Abreakana proamt approach to beauty.
+            A boutique approach to beauty.
           </p>
-          <button className="mt-4 px-10 py-3 text-sm font-semibold tracking-widest text-white bg-gray-500 hover:bg-pink-500 transition duration-150 w-fit mx-auto lg:mx-0">
+          <Link href="/book" className="mt-4 px-10 py-3 text-sm font-semibold tracking-widest text-white bg-gray-500 hover:bg-pink-500 transition duration-150 w-fit mx-auto lg:mx-0">
             BOOK NOW
-          </button>
+          </Link>
         </div>
 
-
+        {/* Right Images & Link */}
         <div className="lg:w-1/2 flex justify-center lg:justify-end items-end space-x-4 relative">
           
-   
-          <div className="w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden shadow-xl 
-                        transition duration-500 ease-in-out hover:scale-110 hover:shadow-2xl cursor-pointer">
-            
+          <div className="relative z-10 w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden shadow-xl transition duration-500 ease-in-out hover:scale-110 hover:shadow-2xl cursor-pointer">
             <img src="braided.png" alt="Profile 1" className="w-full h-full object-cover grayscale" />
           </div>
           
-          
-          <div className="w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden shadow-xl translate-y-4
-                        transition duration-500 ease-in-out hover:scale-110 hover:shadow-2xl cursor-pointer">
-            
+          <div className="relative z-10 w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden shadow-xl translate-y-4 transition duration-500 ease-in-out hover:scale-110 hover:shadow-2xl cursor-pointer">
             <img src="shorthair.png" alt="Profile 2" className="w-full h-full object-cover grayscale" />
           </div>
           
-        
-          <div className="w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden shadow-xl
-                        transition duration-500 ease-in-out hover:scale-110 hover:shadow-2xl cursor-pointer">
-            
+          <div className="relative z-10 w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden shadow-xl transition duration-500 ease-in-out hover:scale-110 hover:shadow-2xl cursor-pointer">
             <img src="afro.png" alt="Profile 3" className="w-full h-full object-cover grayscale" />
           </div>
 
-        
-            <Link href="#services" passHref className="absolute bottom-[-4rem] right-0 px-6 py-2 text-xs font-bold tracking-widest text-white bg-pink-500 rounded-full hover:bg-pink-600 transition duration-300 uppercase hidden md:inline-flex items-center justify-center shadow-lg">
-
-              OUR WORK
-
-          </Link>
+          {/* THE FIX: Moved inside a higher z-index container and adjusted position */}
+          <div className="absolute -bottom-16 right-0 z-50">
+            <Link 
+              href="/#gallery" 
+              className="px-6 py-2 text-xs font-bold tracking-widest text-white bg-pink-500 rounded-full hover:bg-pink-600 transition duration-300 uppercase inline-flex items-center justify-center shadow-lg cursor-pointer active:scale-95"
+            >
+                OUR WORK
+            </Link>
+          </div>
         </div>
       </main>
     </div>
