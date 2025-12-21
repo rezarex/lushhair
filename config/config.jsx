@@ -3,7 +3,7 @@
 // export const CHAT_API_BASE_URL = 'https://lushapi.onrender.com/';
 export const CHAT_API_BASE_URL = 'http://localhost:5000'; 
 export const API_BASE_URL = 'http://localhost:5000/api';
-export const GOOGLE_API_KEY = "AIzaSyBSEOlEpX4ZEedcHpUBBv4KUsgGvRmR4JQ"
+export const GOOGLE_API_KEY = ""
 // export { API_BASE_URL };
 
 // --- Chat Configuration ---
