@@ -9,12 +9,12 @@ import "yet-another-react-lightbox/styles.css";
 // --- Placeholder Data ---
 // Replace 'src' with your actual image paths in /public/images/gallery/
 const galleryItems = [
-  { src: "/images/gallery/braids-1.jpg", alt: "Knotless Boholess Braids", category: "Braids" },
-  { src: "/images/gallery/wig-1.jpg", alt: "Custom Colored Wig Unit", category: "Wigs" },
-  { src: "/images/gallery/weave-1.jpg", alt: "Natural Sew-In Weave", category: "Weaving" },
-  { src: "/images/gallery/braids-2.jpg", alt: "Stitch Cornrows with Heart", category: "Braids" },
-  { src: "/images/gallery/crochet-1.jpg", alt: "Curly Crochet Install", category: "Crochet" },
-  { src: "/images/gallery/wig-2.jpg", alt: "Sleek Bob Wig Install", category: "Wigs" },
+  { src: "/boholessbraids.png", alt: "Knotless Boholess Braids", category: "Braids" },
+  { src: "/colouredwig.png", alt: "Custom Colored Wig Unit", category: "Wigs" },
+  { src: "/naturalweave.png", alt: "Natural Sew-In Weave", category: "Weaving" },
+  { src: "/stitchconrows.png", alt: "Stitch Cornrows with Heart", category: "Braids" },
+  { src: "/crotchetinstall.png", alt: "Curly Crochet Install", category: "Crochet" },
+  { src: "/sleekbob.png", alt: "Sleek Bob Wig Install", category: "Wigs" },
 ];
 
 export default function GallerySection() {

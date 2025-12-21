@@ -4,7 +4,7 @@ import { Clock, Tag, Sparkles, MapPin, Info, Zap, RefreshCw, Scissors } from 'lu
 const mainServices = [
   {
     category: "Braids",
-    image: "/images/braids-cat.jpg", // Replace with your actual image path
+    image: "/braids.png", 
     icon: Zap,
     items: [
       { name: "Box Braids (Medium)", price: "$120", time: "4–6 hrs" },
@@ -13,7 +13,7 @@ const mainServices = [
   },
   {
     category: "Crochet & Weaving",
-    image: "/crochet.png", // Replace with your actual image path
+    image: "/crochet.png", 
     icon: RefreshCw,
     items: [
       { name: "Crochet Install", price: "$90", time: "1.5–3 hrs" },
@@ -22,7 +22,7 @@ const mainServices = [
   },
   {
     category: "Wigs & Styling",
-    image: "/images/wigs-cat.jpg", // Replace with your actual image path
+    image: "/wig7.png", 
     icon: Scissors,
     items: [
       { name: "Basic Custom Wig", price: "$250", time: "4–8 hrs" },

@@ -37,21 +37,21 @@ const Hero = () => {
           <div className="w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden shadow-xl 
                         transition duration-500 ease-in-out hover:scale-110 hover:shadow-2xl cursor-pointer">
             
-            <img src="shorthair.png" alt="Profile 1" className="w-full h-full object-cover grayscale" />
+            <img src="braided.png" alt="Profile 1" className="w-full h-full object-cover grayscale" />
           </div>
           
           
           <div className="w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden shadow-xl translate-y-4
                         transition duration-500 ease-in-out hover:scale-110 hover:shadow-2xl cursor-pointer">
             
-            <img src="afro.png" alt="Profile 2" className="w-full h-full object-cover grayscale" />
+            <img src="shorthair.png" alt="Profile 2" className="w-full h-full object-cover grayscale" />
           </div>
           
         
           <div className="w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden shadow-xl
                         transition duration-500 ease-in-out hover:scale-110 hover:shadow-2xl cursor-pointer">
             
-            <img src="longhair.png" alt="Profile 3" className="w-full h-full object-cover grayscale" />
+            <img src="afro.png" alt="Profile 3" className="w-full h-full object-cover grayscale" />
           </div>
 
         
