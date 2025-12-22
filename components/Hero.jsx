@@ -8,9 +8,7 @@ const Hero = () => {
   const smallImage2 = 'blonde.png';
   const smallImage3 = 'afro.png';
 
-
   return (
-    // Added 'relative' and increased 'pb-40' to make room for the absolute button
     <div className="relative min-h-screen bg-white text-gray-800 font-sans flex items-center pt-16 pb-40">
       
       <main className="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between relative">
@@ -25,7 +23,11 @@ const Hero = () => {
           <p className="text-lg text-gray-600 font-light">
             A boutique approach to beauty.
           </p>
-          <Link href="/book" className="mt-4 px-10 py-3 text-sm font-semibold tracking-widest text-white bg-gray-500 hover:bg-pink-500 transition duration-150 w-fit mx-auto lg:mx-0">
+          {/* UPDATED: Black background with Gold hover */}
+          <Link 
+            href="/book" 
+            className="mt-4 px-10 py-3 text-sm font-semibold tracking-widest text-white bg-black hover:bg-[#D4AF37] transition duration-300 w-fit mx-auto lg:mx-0 shadow-md"
+          >
             BOOK NOW
           </Link>
         </div>
@@ -45,11 +47,11 @@ const Hero = () => {
             <img src="afro.png" alt="Profile 3" className="w-full h-full object-cover grayscale" />
           </div>
 
-          {/* THE FIX: Moved inside a higher z-index container and adjusted position */}
+          {/* UPDATED: Forest Green background with Black hover */}
           <div className="absolute -bottom-16 right-0 z-50">
             <Link 
               href="/#gallery" 
-              className="px-6 py-2 text-xs font-bold tracking-widest text-white bg-pink-500 rounded-full hover:bg-pink-600 transition duration-300 uppercase inline-flex items-center justify-center shadow-lg cursor-pointer active:scale-95"
+              className="px-6 py-2 text-xs font-bold tracking-widest text-white bg-[#2D5A27] rounded-full hover:bg-black transition duration-300 uppercase inline-flex items-center justify-center shadow-lg cursor-pointer active:scale-95"
             >
                 OUR WORK
             </Link>
