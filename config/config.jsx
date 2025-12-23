@@ -1,8 +1,8 @@
 //DEV
-// export const API_BASE_URL = 'https://lushapi.onrender.com/api'; 
-// export const CHAT_API_BASE_URL = 'https://lushapi.onrender.com';
-export const CHAT_API_BASE_URL = 'http://localhost:5000'; 
-export const API_BASE_URL = 'http://localhost:5000/api';
+export const API_BASE_URL = 'https://lushapi.onrender.com/api'; 
+export const CHAT_API_BASE_URL = 'https://lushapi.onrender.com';
+// export const CHAT_API_BASE_URL = 'http://localhost:5000'; 
+// export const API_BASE_URL = 'http://localhost:5000/api';
 export const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY
 // export { API_BASE_URL };
 
