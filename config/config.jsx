@@ -1,8 +1,8 @@
 //DEV
-// export const API_BASE_URL = 'https://lushapi.onrender.com/api'; 
-// export const CHAT_API_BASE_URL = 'https://lushapi.onrender.com';
-export const CHAT_API_BASE_URL = process.env.CHAT_API_BASE_URL; 
-export const API_BASE_URL = process.env.API_BASE_URL;
+export const API_BASE_URL = 'https://lushapi.onrender.com/api'; 
+export const CHAT_API_BASE_URL = 'https://lushapi.onrender.com';
+// export const CHAT_API_BASE_URL = process.env.CHAT_API_BASE_URL; 
+// export const API_BASE_URL = process.env.API_BASE_URL;
 export const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY
 // export { API_BASE_URL };
 
