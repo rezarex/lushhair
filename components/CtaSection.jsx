@@ -37,7 +37,7 @@ export default function CtaSection() {
                   href="/#services"
                   className="inline-flex items-center justify-center px-8 py-4 border-2 border-[#D4AF37] text-sm font-black uppercase tracking-widest rounded-xl text-[#D4AF37] hover:bg-[#D4AF37] hover:text-black transition duration-300 ease-in-out"
                 >
-                  View Pricing
+                  View Services
                 </a>
               </div>
             </div>
