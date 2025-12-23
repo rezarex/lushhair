@@ -2,10 +2,12 @@
 
 import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
 import { GOOGLE_API_KEY } from '@/config/config';
+import Navbar from '@/components/Navbar';
 
 export default function ContactPage() {
   return (
     <div className="min-h-screen bg-white">
+      <Navbar/>
       {/* Header Section - Black Background */}
       <div className="bg-black py-20 px-4 sm:px-6 lg:px-8 text-center text-white border-b border-[#D4AF37]/20">
         <h1 className="text-4xl font-light tracking-[0.2em] sm:text-5xl uppercase">Get in Touch</h1>

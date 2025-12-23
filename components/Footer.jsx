@@ -1,49 +1,65 @@
 // components/Footer.js
 import React from 'react';
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaXTwitter } from 'react-icons/fa6'; 
-
+import Link from 'next/link';
+import Image from 'next/image';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-50 border-t border-gray-500 py-12  text-gray-600">
-      <div className="container mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8">
+    <footer className="bg-gray-50 border-t border-gray-200 py-12 text-gray-600">
+      {/* justify-items-center ensures each grid cell's content is centered within its equal-width column */}
+      <div className="container mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 justify-items-center">
         
         {/* Column 1: Logo/Brand */}
-        <div>
-          <h3 className="text-lg font-bold text-gray-800 mb-4 tracking-widest">LUSH HAIR</h3>
-          <p className="text-sm">Effortless Beauty, Everyday.</p>
-          <p className="text-sm mt-2">&copy; {new Date().getFullYear()} Lush Hair. All rights reserved.</p>
+        <div className="flex flex-col items-center text-center">
+          <Link href="/" className="group transition-opacity hover:opacity-90 mb-4">
+            <div className="relative w-24 h-24 sm:w-28 sm:h-28">
+              <Image 
+                src="/logo.png" 
+                alt="Lush Hair Logo"
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
+          </Link>
+          <p className="text-sm font-light tracking-wide text-gray-500">
+            Effortless Beauty, Everyday.
+          </p>
+          <p className="text-xs mt-2 text-gray-400">
+            &copy; {new Date().getFullYear()} Lush Hair.
+          </p>
         </div>
 
         {/* Column 2: Navigation */}
-        <div>
-          <h4 className="font-semibold text-gray-800 mb-4 tracking-wider">NAVIGATION</h4>
-          <ul className="space-y-2 text-sm">
-            <li><a href="#" className="hover:text-pink-500 transition">Services</a></li>
-            <li><a href="#" className="hover:text-pink-500 transition">Our Work</a></li>
-            <li><a href="#" className="hover:text-pink-500 transition">Visit Us</a></li>
-            <li><a href="#" className="hover:text-pink-500 transition">Book Now</a></li>
+        <div className="text-center md:text-left">
+          <h4 className="font-bold text-gray-800 mb-6 text-xs tracking-[0.2em] uppercase">Navigation</h4>
+          <ul className="space-y-3 text-sm">
+            <li><a href="#" className="hover:text-pink-500 transition-colors">Services</a></li>
+            <li><a href="#" className="hover:text-pink-500 transition-colors">Our Work</a></li>
+            <li><a href="#" className="hover:text-pink-500 transition-colors">Visit Us</a></li>
+            <li><Link href="/booking" className="hover:text-pink-500 transition-colors">Book Now</Link></li>
           </ul>
         </div>
 
         {/* Column 3: Contact */}
-        <div>
-          <h4 className="font-semibold text-gray-800 mb-4 tracking-wider">CONTACT</h4>
-          <ul className="space-y-2 text-sm">
-            <li>+1 (226) 337-8306</li>
-            <li>hello@lushhair.com</li>
-            <li>119 Flockhart Road, Cambridge, ON</li>
+        <div className="text-center md:text-left">
+          <h4 className="font-bold text-gray-800 mb-6 text-xs tracking-[0.2em] uppercase">Contact</h4>
+          <ul className="space-y-3 text-sm">
+            <li className="hover:text-pink-500 transition-colors">+1 (226) 337-8306</li>
+            <li className="hover:text-pink-500 transition-colors">hello@lushhair.com</li>
+            <li className="text-gray-400 leading-relaxed">119 Flockhart Road,<br/>Cambridge, ON</li>
           </ul>
         </div>
 
         {/* Column 4: Social */}
-        <div>
-          <h4 className="font-semibold text-gray-800 mb-4 tracking-wider">FOLLOW US</h4>
-          <ul className="flex space-x-4 text-xl ">
-            <li><a href="..." aria-label="Our Instagram"><FaInstagram size={24} className='hover:text-pink-500 '/></a></li>
-            <li><a href="..." aria-label="Our X (Twitter) profile"><FaXTwitter size={24} className='hover:text-pink-500 '/></a></li>
-            <li><a href="..." aria-label="Our Facebook"><FaFacebookF size={24} className='hover:text-pink-500 '/></a></li>
-            <li><a href="..." aria-label="Our LinkedIn"><FaLinkedinIn size={24} className='hover:text-pink-500 ' /></a></li>
+        <div className="text-center md:text-left">
+          <h4 className="font-bold text-gray-800 mb-6 text-xs tracking-[0.2em] uppercase">Follow Us</h4>
+          <ul className="flex justify-center md:justify-start space-x-5">
+            <li><a href="#" aria-label="Instagram"><FaInstagram size={20} className='hover:text-pink-500 transition-colors'/></a></li>
+            <li><a href="#" aria-label="X"><FaXTwitter size={20} className='hover:text-pink-500 transition-colors'/></a></li>
+            <li><a href="#" aria-label="Facebook"><FaFacebookF size={20} className='hover:text-pink-500 transition-colors'/></a></li>
+            <li><a href="#" aria-label="LinkedIn"><FaLinkedinIn size={20} className='hover:text-pink-500 transition-colors' /></a></li>
           </ul>
         </div>
       </div>

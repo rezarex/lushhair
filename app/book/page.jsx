@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { Calendar as CalendarIcon, Clock, CheckCircle2, User, Phone, Mail, ArrowLeft, Loader2, MessageSquarePlus } from 'lucide-react';
 import Link from 'next/link';
 import { API_BASE_URL } from '@/config/config';
+import Navbar from '@/components/Navbar';
 
 const GET_SERVICES_API = `${API_BASE_URL}/services`; 
 const ADD_BOOKING_API = `${API_BASE_URL}/booking/add`;
@@ -106,6 +107,7 @@ export default function BookingPage() {
 
   return (
     <div className="min-h-screen bg-black py-20 px-4 sm:px-6">
+      <Navbar/>
       <div className="max-w-2xl mx-auto pt-10">
         
         <div className="flex items-center justify-between mb-12">

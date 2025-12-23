@@ -3,6 +3,8 @@ import React from 'react';
 import useScrollDirection from '../hooks/useScrollDirection';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
+
 
 
 const Navbar = () => {
@@ -21,19 +23,20 @@ const Navbar = () => {
       className={`fixed top-0 left-0 right-0 z-50 bg-white transition-transform duration-300 ease-in-out ${navClass}`}
     >
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        {/* Logo and Name */}
-        <div className="flex items-center space-x-2">
-          {/* Logo element for LUSH HAIR */}
-          <svg
-            className="w-6 h-6 text-black transform -rotate-45"
-            fill="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10c0-.126-.01-.249-.022-.372C19.467 5.768 15.116 2 12 2zM4 12c0-4.418 3.582-8 8-8v16c-4.418 0-8-3.582-8-8z" />
-          </svg>
-          <span className="text-gray-500 hover:text-gray-900 text-xl font-medium tracking-widest">LUSH HAIR</span>
-        </div>
+            <Link href="/" className="flex items-center space-x-3 group transition-opacity hover:opacity-90">
+
+                    <div className="relative w-10 h-10 sm:w-12 sm:h-12">
+                      <Image 
+                        src="/logo.png" // Ensure the extension matches your file in /public
+                        alt="Lush Hair Logo"
+                        fill
+                        className="object-contain"
+                        priority
+                      />
+                    </div>
+                    
+
+              </Link>
 
         {/* Navigation Links */}
         <nav className="flex items-center space-x-6">
