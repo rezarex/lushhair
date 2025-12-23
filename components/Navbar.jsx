@@ -64,11 +64,12 @@ const Navbar = () => {
             );
           })}
 
-        <Link href="/book" passHref className="px-6 py-2 text-sm font-semibold tracking-widest text-white bg-gray-500 hover:bg-pink-500 transition duration-150 rounded-sm">
-
-          BOOK NOW
-
-        </Link>
+          <Link 
+            href="/book" 
+            className="mt-4 px-10 py-3 text-sm font-semibold tracking-widest text-white bg-black hover:bg-[#D4AF37] transition duration-300 w-fit mx-auto lg:mx-0 shadow-md"
+          >
+            BOOK NOW
+          </Link>
           
           {/* <button className="px-6 py-2 text-sm font-semibold tracking-widest text-white bg-gray-500 hover:bg-pink-500 transition duration-150 rounded-sm">
             BOOK NOW
