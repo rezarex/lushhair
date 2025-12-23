@@ -49,7 +49,7 @@ export default function FloatingContact() {
           setMessages((prev) => [...prev, {
             user: data.user,
             text: data.message || data.text,
-            sender: data.sender || 'client',
+            sender: 'client',
             timestamp: new Date()
           }]);
         }

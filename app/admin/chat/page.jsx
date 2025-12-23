@@ -57,7 +57,7 @@ export default function AdminChatPage() {
         _id: Math.random().toString(),
         user: data.user,
         text: data.message || data.text,
-        sender: data.sender || 'client',
+        sender: data.sender,
         timestamp: new Date().toISOString()
       }]);
     });
