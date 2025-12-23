@@ -113,7 +113,7 @@ export default function ServicesSection() {
                         </span>
                       </div>
                       {/* Theme Color: Gold Pricing */}
-                      <span className="text-[#D4AF37] font-bold">{item.price}</span>
+                      {/* <span className="text-[#D4AF37] font-bold">{item.price}</span> */}
                     </div>
                   ))}
                 </div>
