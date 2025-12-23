@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Calendar as CalendarIcon, Clock, CheckCircle2, User, Phone, Mail, ArrowLeft, Loader2 } from 'lucide-react';
+import { Calendar as CalendarIcon, Clock, CheckCircle2, User, Phone, Mail, ArrowLeft, Loader2, MessageSquarePlus } from 'lucide-react';
 import Link from 'next/link';
 import { API_BASE_URL } from '@/config/config';
 
@@ -20,10 +20,12 @@ export default function BookingPage() {
   const [loading, setLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
+  // Added extraServices to state
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
     email: '', 
+    extraServices: '' 
   });
 
   useEffect(() => {
@@ -60,7 +62,8 @@ export default function BookingPage() {
       timeslot: selectedTime,
       phone: formData.phone,
       email: formData.email,
-      service: selectedService.name
+      service: selectedService.name,
+      extraServices: formData.extraServices // Included in payload
     };
 
     try {
@@ -105,7 +108,6 @@ export default function BookingPage() {
     <div className="min-h-screen bg-black py-20 px-4 sm:px-6">
       <div className="max-w-2xl mx-auto pt-10">
         
-        {/* Progress Header */}
         <div className="flex items-center justify-between mb-12">
           <button onClick={step > 1 ? prevStep : undefined} className={`p-2 rounded-full border border-zinc-800 hover:border-[#D4AF37] transition-colors ${step === 1 ? 'invisible' : 'visible'}`}>
             <ArrowLeft size={20} className="text-[#D4AF37]" />
@@ -121,13 +123,39 @@ export default function BookingPage() {
 
         <div className="bg-zinc-950 rounded-3xl shadow-2xl border border-white/5 overflow-hidden">
           
-          {/* STEP 1: SERVICE */}
+          {/* STEP 1: SERVICES + CUSTOM OPTION */}
           {step === 1 && (
             <div className="p-6 sm:p-8">
               {fetchingServices ? (
                 <div className="flex justify-center py-20"><Loader2 className="animate-spin text-[#D4AF37]" size={40} /></div>
               ) : (
                 <div className="grid gap-4">
+                  
+                  {/* NEW: CUSTOM SERVICE OPTION */}
+                  <button 
+                    onClick={() => { 
+                      setSelectedService({ name: "Custom/Extra Service", category: "SPECIAL" }); 
+                      nextStep(); 
+                    }}
+                    className="flex items-center justify-between p-6 rounded-2xl border-2 border-dashed border-[#D4AF37]/30 bg-[#D4AF37]/5 hover:border-[#D4AF37] hover:bg-[#D4AF37]/10 transition-all text-left group"
+                  >
+                    <div>
+                      <p className="text-[10px] text-[#D4AF37] font-bold uppercase tracking-widest mb-1">Flexible Option</p>
+                      <p className="font-bold text-white uppercase tracking-tight">Custom Service</p>
+                      <p className="text-xs text-zinc-500 font-light italic">Choose this to describe what you need in Step 3</p>
+                    </div>
+                    <div className="text-right">
+                      <span className="text-[9px] text-[#D4AF37] font-bold uppercase tracking-widest border-b border-[#D4AF37]/30 pb-0.5">Select</span>
+                    </div>
+                  </button>
+
+                  <div className="relative py-4 flex items-center">
+                    <div className="flex-grow border-t border-zinc-900"></div>
+                    <span className="flex-shrink mx-4 text-[10px] text-zinc-700 font-bold uppercase tracking-widest">Or choose a standard service</span>
+                    <div className="flex-grow border-t border-zinc-900"></div>
+                  </div>
+
+                  {/* STANDARD SERVICES */}
                   {services.map((s) => (
                     <button 
                       key={s._id}
@@ -140,7 +168,6 @@ export default function BookingPage() {
                         <p className="text-xs text-zinc-500 font-light">{s.time}</p>
                       </div>
                       <div className="text-right">
-                        <p className="font-black text-[#D4AF37] text-lg">{s.price}</p>
                         <span className="text-[9px] text-zinc-500 font-bold uppercase tracking-widest border-b border-[#D4AF37]/30 pb-0.5">Select</span>
                       </div>
                     </button>
@@ -189,7 +216,7 @@ export default function BookingPage() {
             </div>
           )}
 
-          {/* STEP 3: CONTACT FORM */}
+          {/* STEP 3: CONTACT FORM + EXTRA SERVICES */}
           {step === 3 && (
             <form onSubmit={handleSubmit} className="p-6 sm:p-8 space-y-6">
               <div className="bg-zinc-900/50 p-5 rounded-2xl flex items-center justify-between border border-[#D4AF37]/10">
@@ -215,6 +242,17 @@ export default function BookingPage() {
                 <div className="relative group">
                   <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-600 group-focus-within:text-[#D4AF37] transition-colors" size={18} />
                   <input required placeholder="EMAIL ADDRESS" onChange={(e) => setFormData({...formData, email: e.target.value})} className="w-full pl-12 pr-4 py-5 bg-zinc-900 border border-zinc-800 rounded-2xl outline-none text-white focus:border-[#D4AF37] text-xs tracking-widest transition-all" />
+                </div>
+                
+                {/* EXTRA SERVICES TEXT BOX */}
+                <div className="relative group">
+                  <MessageSquarePlus className="absolute left-4 top-6 text-zinc-600 group-focus-within:text-[#D4AF37] transition-colors" size={18} />
+                  <textarea 
+                    placeholder="ADD EXTRA SERVICES OR SPECIAL REQUESTS..." 
+                    rows={3}
+                    onChange={(e) => setFormData({...formData, extraServices: e.target.value})} 
+                    className="w-full pl-12 pr-4 py-5 bg-zinc-900 border border-zinc-800 rounded-2xl outline-none text-white focus:border-[#D4AF37] text-xs tracking-widest transition-all resize-none"
+                  />
                 </div>
               </div>
 

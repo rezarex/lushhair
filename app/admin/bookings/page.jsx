@@ -10,7 +10,8 @@ import {
   Filter,
   Phone,
   Loader2,
-  Mail
+  Mail,
+  MessageSquare
 } from 'lucide-react';
 import { API_BASE_URL } from '@/config/config';
 
@@ -131,8 +132,31 @@ export default function BookingsManagement() {
                         <span className="text-[10px] text-zinc-600 font-mono uppercase truncate w-24">{booking._id}</span>
                       </div>
                     </td>
+                    
+                    {/* UPDATED SERVICE COLUMN WITH EXTRA SERVICES TOOLTIP */}
                     <td className="px-6 py-4">
-                      <span className="text-sm font-bold text-yellow-500">{booking.service}</span>
+                      <div className="flex flex-col gap-1 relative group">
+                        <span className="text-sm font-bold text-yellow-500 leading-tight">
+                          {booking.service}
+                        </span>
+                        
+                        {/* Only show if extraServices exists and is not empty */}
+                        {booking.extraServices && (
+                          <div className="flex items-center gap-1 cursor-help">
+                            <span className="flex items-center gap-1 text-[9px] bg-[#D4AF37]/10 text-[#D4AF37] px-1.5 py-0.5 rounded border border-[#D4AF37]/20 font-black uppercase tracking-tighter">
+                              <MessageSquare size={10} /> Extra Request
+                            </span>
+
+                            {/* Tooltip Content */}
+                            <div className="absolute left-0 top-full mt-2 z-50 hidden group-hover:block w-64 p-3 bg-zinc-900 border border-zinc-800 rounded-xl shadow-2xl animate-in fade-in zoom-in duration-200">
+                              <p className="text-[10px] text-zinc-500 uppercase font-black mb-1">Additional Details:</p>
+                              <p className="text-xs text-white font-light leading-relaxed">
+                                {booking.extraServices}
+                              </p>
+                            </div>
+                          </div>
+                        )}
+                      </div>
                     </td>
                     <td className="px-6 py-4">
                       <div className="flex flex-col text-xs text-zinc-400 gap-1">

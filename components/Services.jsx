@@ -126,14 +126,14 @@ export default function ServicesSection() {
         {/* Theme Color: Green Container */}
         <div className="bg-[#2D5A27]/5 rounded-2xl p-8 mb-12 border border-[#2D5A27]/10">
           <h3 className="text-lg font-bold text-black mb-6 flex items-center">
-            <Tag size={20} className="mr-2 text-[#2D5A27]" /> Extras & Add-ons
+            <Tag size={20} className="mr-2 text-[#2D5A27]" /> Some Extras & Add-ons
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {extras.map((extra) => (
               <div key={extra._id} className="flex items-center justify-between sm:justify-start sm:gap-4 p-4 bg-white rounded-xl shadow-sm border border-gray-100">
                 <IconRenderer iconName={extra.icon} className="text-[#D4AF37]" size={18} />
                 <span className="text-gray-700 font-medium">{extra.name}</span>
-                <span className="ml-auto text-[#2D5A27] font-bold">{extra.price}</span>
+                {/* <span className="ml-auto text-[#2D5A27] font-bold">{extra.price}</span> */}
               </div>
             ))}
           </div>
