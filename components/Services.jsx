@@ -140,8 +140,7 @@ export default function ServicesSection() {
         </div>
 
         {/* --- Policy Footer --- */}
-        <div className="max-w-3xl mx-auto text-center border-t border-gray-200 pt-8">
-          {/* Theme Color: Black and Gold theme for the Badge */}
+        {/* <div className="max-w-3xl mx-auto text-center border-t border-gray-200 pt-8">
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-black text-[#D4AF37] text-sm font-medium mb-4">
             <Info size={16} className="mr-2" />
             Booking & Cancellation Policy
@@ -150,7 +149,7 @@ export default function ServicesSection() {
             A <strong className="text-black">30% deposit</strong> is required for all appointments over $100. 
             Cancellations made <strong className="text-black">48+ hours</strong> in advance will receive a full deposit refund.
           </p>
-        </div>
+        </div> */}
 
       </div>
     </section>
